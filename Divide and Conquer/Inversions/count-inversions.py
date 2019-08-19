@@ -26,6 +26,16 @@ def sortCountInv(arr):
     totalInv = leftCount + splitCount + rightCount    
     return sortedArray, totalInv
 
+
 print(sortCountInv([1, 3, 5, 2, 4, 6]))
 print(sortCountInv([5, 4, 3, 2, 1]))
 print(sortCountInv([1, 6, 2, 5, 4]))
+
+# read textFile and transform it to an array
+textFile = open("IntegerArray.txt", "r")
+array = textFile.read().split('\n')
+array = filter(None, array)
+array = list(map(int, array))
+
+sortedArray, totalInv = sortCountInv(array)
+print(totalInv)
